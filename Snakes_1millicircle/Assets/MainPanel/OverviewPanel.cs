@@ -49,6 +49,13 @@ public class OverviewPanel : MonoBehaviourPunCallbacks
             if (Nscore.NickName == named) { Nscore.score += 1; }
         }
     }
+    public void SetAddSc(string named)
+    {
+        foreach (var Nscore in Nickname)
+        {
+            if (Nscore.NickName == named) { Nscore.score += 3; }
+        }
+    }
     public int CurrentScore(string named)
     {
         int n = 0;

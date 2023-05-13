@@ -1,5 +1,6 @@
 ﻿using System;
 using Gameplay.Helpers;
+using PlayerSystem;
 using UnityEngine;
 
 namespace Gameplay.Weapons.Projectiles
@@ -50,6 +51,7 @@ namespace Gameplay.Weapons.Projectiles
             {
                 damagableObject.ApplyDamage(this);
                 if (other.gameObject.GetComponent<EnemyShipController>()!=null) { FindObjectOfType<OverviewPanel>().SetAddScore(Nicknamed); }
+                if (other.gameObject.GetComponent<PlayerView>() != null&& other.gameObject.GetComponent<PlayerView>().PlName!=Nicknamed) { FindObjectOfType<OverviewPanel>().SetAddSc(Nicknamed); }
             }
         }
         

@@ -41,9 +41,9 @@ public class CollShip : MonoBehaviour
             //Application.LoadLevel("SampleScene"); 
             foreach (var pi in FindObjectsOfType<Gameplay.Spawners.Spawner>())
             {
-                pi.StopSpawn();
+                //pi.StopSpawn();
             }
-            GameObject.Find("Canvas").transform.Find("New Game").gameObject.SetActive(true);
+            //GameObject.Find("Canvas").transform.Find("New Game").gameObject.SetActive(true);
         }
         if (isInvincible)
         {

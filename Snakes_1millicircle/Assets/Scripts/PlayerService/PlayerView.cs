@@ -14,7 +14,7 @@ namespace PlayerSystem
         private float speed = 50f;
         [SerializeField]
         private Text playerName;
-
+        public string PlName => playerName.text;
         [SerializeField]
         private GameObject playerCamera, bulletPrefab, shotPos;
         [SerializeField] protected Joystick joystick;
@@ -51,20 +51,20 @@ namespace PlayerSystem
             if(pv.IsMine)
             {
                 Movement();
-                GetComponent<Gameplay.ShipControllers.CustomControllers.PlayerShipController>().OnFired();
                 //if(Input.GetMouseButtonDown(0))
                 //{
                 //    SpawnBullet();
                 //}
                 CheckExitScreen();
             }
+            GetComponent<Gameplay.ShipControllers.CustomControllers.PlayerShipController>().OnFired();
             //else
             //{
             //    ReadMovement();
             //}
-            
 
-           
+
+
         }
 
         void SpawnBullet()
