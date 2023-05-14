@@ -8,7 +8,7 @@ namespace Gameplay.ShipControllers.CustomControllers
     public class PlayerShipController : ShipController
     {
         bool MouseHeel=false; 
-        public string pname => GetComponent<PlayerView>().PlName;
+        public PhotonView pv; public string pname => GetComponent<PlayerView>().PlName;
         protected override void ProcessHandling(MovementSystem movementSystem)
         {
             if(
@@ -32,15 +32,13 @@ namespace Gameplay.ShipControllers.CustomControllers
             //}
 
         }
-
         public void OnFired()
         {
             spaceship1.WeaponSystem.TriggerFire();
             //if (Input.GetKey(KeyCode.Space) || Input.GetMouseButton(0))
             //{
-            //   spaceship1.WeaponSystem.TriggerFire();
-            //   var source = GetComponent<AudioSource>();
-            //   if (source != null) source.PlayOneShot(source.clip);
+            //    var source = GetComponent<AudioSource>();
+            //    if (source != null) source.PlayOneShot(source.clip);
             //}
             //if (Input.GetKey(KeyCode.M))
             //{
@@ -51,7 +49,7 @@ namespace Gameplay.ShipControllers.CustomControllers
             //    MouseHeel = false;
             //}
         }
-      
+
         protected override void ProcessFire(WeaponSystem fireSystem)
         {
             

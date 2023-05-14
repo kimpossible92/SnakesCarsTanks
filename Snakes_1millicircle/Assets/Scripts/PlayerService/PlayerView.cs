@@ -38,9 +38,6 @@ namespace PlayerSystem
                 var currentpl = new PlayerSpaceship();
                 currentpl.NickName = PhotonNetwork.NickName;
                 currentpl.score = 0;
-                //FindObjectOfType<OverviewPanel>().Nickname.Add(currentpl);
-                //playerCamera.SetActive(true);
-                //Camera.main.gameObject.SetActive(false);
                 
             }
         }
@@ -51,10 +48,6 @@ namespace PlayerSystem
             if(pv.IsMine)
             {
                 Movement();
-                //if(Input.GetMouseButtonDown(0))
-                //{
-                //    SpawnBullet();
-                //}
                 CheckExitScreen();
             }
             GetComponent<Gameplay.ShipControllers.CustomControllers.PlayerShipController>().OnFired();
@@ -84,7 +77,7 @@ namespace PlayerSystem
             if (joyButton.Pressed)
             {
                 joyVertical = 1;
-                transform.Translate(Vector2.up*0.03f);
+                transform.Translate(Vector2.up*0.1f);
             }
         }
 

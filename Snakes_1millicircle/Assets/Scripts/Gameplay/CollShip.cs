@@ -66,12 +66,10 @@ public class CollShip : MonoBehaviour
     {
         Rect lifeIconRect = new Rect(10, 150, 32, 32);
         GUI.DrawTexture(lifeIconRect, lifeIconTexture);
-
         GUIStyle style = new GUIStyle();
         style.fontSize = 30;
         style.fontStyle = FontStyle.Bold;
         style.normal.textColor = Color.yellow;
-
         Rect labelRect = new Rect(lifeIconRect.xMax + 10, lifeIconRect.y, 60, 32);
         GUI.Label(labelRect, life.ToString(), style);
     }

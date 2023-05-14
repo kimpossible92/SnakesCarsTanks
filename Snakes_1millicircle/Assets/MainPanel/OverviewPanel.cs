@@ -8,6 +8,7 @@ using Photon.Realtime;
 using Photon.Pun.UtilityScripts;
 using Photon.Pun;
 using Photon.Pun.Demo.Asteroids;
+using System;
 
 public class OverviewPanel : MonoBehaviourPunCallbacks
 {
@@ -49,13 +50,6 @@ public class OverviewPanel : MonoBehaviourPunCallbacks
             if (Nscore.NickName == named) { Nscore.score += 1; }
         }
     }
-    public void SetAddSc(string named)
-    {
-        foreach (var Nscore in Nickname)
-        {
-            if (Nscore.NickName == named) { Nscore.score += 3; }
-        }
-    }
     public int CurrentScore(string named)
     {
         int n = 0;
@@ -65,6 +59,15 @@ public class OverviewPanel : MonoBehaviourPunCallbacks
         }
         return n;
     }
+
+    public void SetAddSc(string named)
+    {
+        foreach (var Nscore in Nickname)
+        {
+            if (Nscore.NickName == named) { Nscore.score += 3; }
+        }
+    }
+
     public override void OnPlayerLeftRoom(Player otherPlayer)
     {
         GameObject go = null;
